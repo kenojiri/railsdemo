@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>商品コード:</b>
+  <%= @item.name %>
+</p>
+
+<p>
+  <b>画像:</b>
+  <%= image_tag(@item.picture_url, width: 600) if @item.picture.present? %>
+  <!-- <%= @item.picture %> -->
+</p>
+
+<p>
+  <b>説明:</b>
+  <%= @item.description %>
+</p>
+
+
+<%= link_to '[編集]', edit_item_path(@item) %> |
+<%= link_to '[戻る]', items_path %>

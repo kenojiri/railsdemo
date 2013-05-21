@@ -1,0 +1,27 @@
+<h1>商品の一覧</h1>
+
+<table>
+  <tr>
+    <th>画像</th>
+    <th>商品コード</th>
+    <th>説明</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @items.each do |item| %>
+  <tr>
+    <td><%= image_tag(item.picture_url, width: 150) if item.picture.present? %><!-- <%= item.picture %> --></td>
+    <td class="itemname"><%= item.name %></td>
+    <td><%= item.description %></td>
+    <td><%= link_to '[表示]', item %></td>
+    <td><%= link_to '[修正]', edit_item_path(item) %></td>
+    <td><%= link_to '[削除]', item, method: :delete, data: { confirm: '本当によろしいですか？' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '[[商品追加]]', new_item_path %>

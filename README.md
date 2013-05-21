@@ -1,0 +1,3 @@
+### railsdemo ###
+
+railsgirl.jpをみながらつくったデモアプリ。
